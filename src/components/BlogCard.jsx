@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { server } from "../main";
 
 const BlogCard = ({
   id,
@@ -15,7 +16,7 @@ const BlogCard = ({
       {/* Image with Link */}
       <Link to={`/blog/${id}`} className="block">
         <img
-          src={`http://localhost:4000/images/${image}`}
+          src={`${server}/images/${image}`}
           alt={title}
           className="w-full h-56 object-cover transition-transform duration-300 hover:scale-105"
         />
@@ -31,7 +32,7 @@ const BlogCard = ({
         {/* Author Info */}
         <div className="flex items-center gap-4 mt-4">
           <img
-            src={`http://localhost:4000/images/${author_image}`}
+            src={`${server}/images/${author_image}`}
             alt={author_name}
             className="w-10 h-10 rounded-full border border-gray-300"
           />
